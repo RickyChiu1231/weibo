@@ -31,8 +31,8 @@ class UsersController extends Controller
             'password' => bcrypt($request->password),
         ]);
 
-        session()->flash('warning', 'Welcome to our webiste');
+        session()->flash('info', 'Welcome to our webiste');
 
-        return redirect()->route('users.show', [$user]);
+        return redirect()->route('users.show', [$user->id]);
     }
 }
